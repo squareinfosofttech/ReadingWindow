@@ -14,7 +14,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		6955A5C72064FC3D009EEAEA /* swiftDemo.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 6955A5C62064FC3D009EEAEA /* swiftDemo.pdf */; };
+		69DC426920652DB7002CDAA5 /* swiftDemo.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 69DC426820652DB7002CDAA5 /* swiftDemo.pdf */; };
 		E0DF2013CB9435E173C3D7CC /* Pods_readingWindow_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB422A788FC5C6749517C74 /* Pods_readingWindow_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,7 +41,7 @@
 		607FACE51AFB9204008FA782 /* readingWindow_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = readingWindow_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		6955A5C62064FC3D009EEAEA /* swiftDemo.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = swiftDemo.pdf; sourceTree = "<group>"; };
+		69DC426820652DB7002CDAA5 /* swiftDemo.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = swiftDemo.pdf; sourceTree = "<group>"; };
 		77CBE9D319BA2A81DAE51C26 /* Pods-readingWindow_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-readingWindow_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-readingWindow_Example/Pods-readingWindow_Example.release.xcconfig"; sourceTree = "<group>"; };
 		854A7D90E507FA22A58D8A35 /* readingWindow.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = readingWindow.podspec; path = ../readingWindow.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A7C11AAEC075C13968CB1A7D /* Pods_readingWindow_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_readingWindow_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,7 +120,7 @@
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
-				6955A5C62064FC3D009EEAEA /* swiftDemo.pdf */,
+				69DC426820652DB7002CDAA5 /* swiftDemo.pdf */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = "Example for readingWindow";
@@ -255,7 +255,7 @@
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
-				6955A5C72064FC3D009EEAEA /* swiftDemo.pdf in Resources */,
+				69DC426920652DB7002CDAA5 /* swiftDemo.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

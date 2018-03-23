@@ -6,6 +6,8 @@
 //
 
 //public class readingWindow it access view import readingWindow package
+import UIKit
+
 public class readingWindow:NSObject {
 
     public static let sharedInstance = readingWindow()
@@ -34,12 +36,7 @@ public class readingWindow:NSObject {
     
     
     private func config() {
-        //add target to reading area for move area position
-        moveReading.addTarget(self, action: #selector(self.moveReadingArea(_:)))
-        
-        //add target to resize reading area
-        resizeReading.addTarget(self, action: #selector(self.resizeReadingArea(_:)))
-        
+       
         //set reading area deafult frame
         readingArea.frame = self.setDefaultSize
         
@@ -52,22 +49,15 @@ public class readingWindow:NSObject {
         //user intrection enable in reading area for move & resize reading area
         readingArea.isUserInteractionEnabled = true
         
-        //add Gesture Reconizer for move reading area
-        readingArea.addGestureRecognizer(moveReading)
+        //add all gesture in reading area
+        self.addGesture()
         
-        //add Geture Reconizer for resize Reading area
-        readingArea.addGestureRecognizer(resizeReading)
-        
-        //add delegate for gesture reconizer
-        moveReading.delegate = self as? UIGestureRecognizerDelegate
-        resizeReading.delegate = self as? UIGestureRecognizerDelegate
         
         //init default reading area positon
         let readingX = readingArea.frame.origin.x
         let readingY = readingArea.frame.origin.y
         let readingW = readingArea.frame.width
         let readingH = readingArea.frame.height
-        
         
         //call to craw reading area firat time
         drawArea.drawReadingArea(readingX: readingX, readingY: readingY, readingW: readingW, readingH: readingH, view: readingView, backColor: self.setBackgroundColor, backAlpha: self.setBackgroundAlpha, readColor: self.setReadingAreaColor)
@@ -106,6 +96,26 @@ public class readingWindow:NSObject {
         background.removeFromSuperlayer()
         self.isEnable = false
     }
+    
+    private func addGesture() {
+        
+        //add target to reading area for move area position
+        moveReading.addTarget(self, action: #selector(self.moveReadingArea(_:)))
+        
+        //add target to resize reading area
+        resizeReading.addTarget(self, action: #selector(self.resizeReadingArea(_:)))
+        
+        
+        //add Gesture Reconizer for move reading area
+        readingArea.addGestureRecognizer(moveReading)
+    
+        //add Geture Reconizer for resize Reading area
+        readingArea.addGestureRecognizer(resizeReading)
+    
+        //add delegate for gesture reconizer
+        moveReading.delegate = self as? UIGestureRecognizerDelegate
+        resizeReading.delegate = self as? UIGestureRecognizerDelegate
+        }
     
 }
 

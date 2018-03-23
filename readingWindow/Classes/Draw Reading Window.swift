@@ -18,6 +18,7 @@ class DrawReadingWindow {
         background.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
         background.backgroundColor = backColor.withAlphaComponent(backAlpha).cgColor
         
+        //update readin are frame
         readingAreaShape.frame = background.bounds
         readingAreaShape.fillColor = readColor.cgColor
         
@@ -27,6 +28,7 @@ class DrawReadingWindow {
         
         readingAreaShape.fillRule = kCAFillRuleEvenOdd
         
+        //append new path in reading area as per user intrection
         readingPath.append(UIBezierPath(rect: readingFrame))
         readingAreaShape.path = readingPath.cgPath
         
