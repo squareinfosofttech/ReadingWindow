@@ -59,6 +59,10 @@ set deafult reading window position and size
 readingWindow.sharedInstance.setDefaultSize = CGRect(x: 99, y: 50, width: 180, height: 30)
 ```
 
+## Demo Screen Shot
+![alt text](https://raw.githubusercontent.com/amit44405/ReadingWindow/Example/readingWindow/ScreenShot.png)
+
+
 ## Requirements
 
 ```ruby
