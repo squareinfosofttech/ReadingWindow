@@ -39,7 +39,7 @@
 		E0365D572889EE17E78AA234A7DD58AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6E88A450A84E3957158B3B3459740AA /* Foundation.framework */; };
 		E30A92CE1759FEB3EC5C5A7FDC223EAB /* readingWindow-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FD040F85CDB1082D8E5B1B8F7A554F55 /* readingWindow-dummy.m */; };
 		E6A6C27F5664DA344A20546E225B77A7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6E88A450A84E3957158B3B3459740AA /* Foundation.framework */; };
-		EC7E13E2F28047BEAA59BC399B6DF776 /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20177913D899288A41B8B5A8CC137A3 /* UI.swift */; };
+		EC7E13E2F28047BEAA59BC399B6DF776 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20177913D899288A41B8B5A8CC137A3 /* data.swift */; };
 		F4FCC809616A7A5BA61AA8537DB09E34 /* Pods-readingWindow_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 107FFCFC8E1A519F93E61C1AFF906061 /* Pods-readingWindow_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -106,7 +106,7 @@
 		AA323C90663942983643D7A4D1F697C8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		AD34D2AA92C5DCF5A4E7C2C1C4E15412 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		AEC7DEC23F302D5B3C30049DEA4282BF /* Pods-readingWindow_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-readingWindow_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		B20177913D899288A41B8B5A8CC137A3 /* UI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UI.swift; path = readingWindow/Classes/UI.swift; sourceTree = "<group>"; };
+		B20177913D899288A41B8B5A8CC137A3 /* data.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = data.swift; path = readingWindow/Classes/data.swift; sourceTree = "<group>"; };
 		B3FD72B1D0A9B1001009001D6EE1272A /* readingWindow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = readingWindow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9109B8B333B5A1A3E92EFC09EDC10AC /* UIApplication+StrictKeyWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIApplication+StrictKeyWindow.h"; path = "FBSnapshotTestCase/Categories/UIApplication+StrictKeyWindow.h"; sourceTree = "<group>"; };
 		B9CEF7D6C5E08AB80E58DABC75D882BC /* UIImage+Diff.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Diff.m"; path = "FBSnapshotTestCase/Categories/UIImage+Diff.m"; sourceTree = "<group>"; };
@@ -282,7 +282,7 @@
 				36E61E7B120B5214AB97C3BCE90464FD /* Adjust Reading Window.swift */,
 				A60AC0FBFC92DB5E4A86B050602E6515 /* Draw Reading Window.swift */,
 				200DB5DD5F6540798D4B4691C21CE4A1 /* readingWindow.swift */,
-				B20177913D899288A41B8B5A8CC137A3 /* UI.swift */,
+				B20177913D899288A41B8B5A8CC137A3 /* data.swift */,
 				B6E22AFFB5335FC33B6D414FE98E3E9A /* Pod */,
 				A20C85387E068E8164734350CEA43407 /* Support Files */,
 			);
@@ -544,7 +544,7 @@
 				9D1EC2B09F26C4EE47C5151D22AA71F7 /* Draw Reading Window.swift in Sources */,
 				E30A92CE1759FEB3EC5C5A7FDC223EAB /* readingWindow-dummy.m in Sources */,
 				19EBFE615F97EF70F26A9FAF29E90D79 /* readingWindow.swift in Sources */,
-				EC7E13E2F28047BEAA59BC399B6DF776 /* UI.swift in Sources */,
+				EC7E13E2F28047BEAA59BC399B6DF776 /* data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,44 +6,55 @@
 //
 
 //public class readingWindow it access view import readingWindow package
-public class readingWindow : NSObject {
+public class readingWindow:NSObject {
 
-    public var backgroundAlpha:CGFloat = 0.9 //background color alpha
-    public var readingAreaAlpha:CGFloat = 0 //reading area color alpha
-    public var backColor = UIColor.black //background color
-    public var readingAreaColor = UIColor.white //reading area color
+    public static let sharedInstance = readingWindow()
+
+    private override init() { }
     
-    public var defaultFrame = CGRect(x: 11, y: 31, width: 211, height: 37) //defaulr frame of reading area
+    public var setBackgroundAlpha:CGFloat = 0.9 //background color alpha
+    public var setReadingAreaAlpha:CGFloat = 0 //reading area color alpha
+    public var setBackgroundColor = UIColor.black //background color
+    public var setReadingAreaColor = UIColor.white //reading area color
+    
+    public var setDefaultSize = CGRect(x: 11, y: 31, width: 211, height: 37) //defaulr frame of reading area
 
     private let drawArea = DrawReadingWindow() //access draw first time reading area
     private let manageArea = AdjustReadingWindow() //redraw reading area
     
-    public func addWindow(view:UIView){ // for start reading mode
-        
-        readingView = view // init gesture views
-        //MARK: init Gesture Pinch & Pan
-        
+    public var isEnable = false
+
+    
+    
+    public func show(view:UIView){ // for start reading mode
+            readingView = view // init gesture views
+            //MARK: init Gesture Pinch & Pan
+            self.config() //config all component
+        }
+    
+    
+    private func config() {
         //add target to reading area for move area position
         moveReading.addTarget(self, action: #selector(self.moveReadingArea(_:)))
-
+        
         //add target to resize reading area
         resizeReading.addTarget(self, action: #selector(self.resizeReadingArea(_:)))
         
         //set reading area deafult frame
-        readingArea.frame = self.defaultFrame
+        readingArea.frame = self.setDefaultSize
         
         //set reading area default background color
-        readingArea.backgroundColor = self.readingAreaColor.withAlphaComponent(self.readingAreaAlpha)
+        readingArea.backgroundColor = self.setReadingAreaColor.withAlphaComponent(self.setReadingAreaAlpha)
         
         //MARK: Add Reading Subview in Webview also add Gesture to Subview
-        view.addSubview(readingArea)
+        readingView.addSubview(readingArea)
         
         //user intrection enable in reading area for move & resize reading area
         readingArea.isUserInteractionEnabled = true
         
         //add Gesture Reconizer for move reading area
         readingArea.addGestureRecognizer(moveReading)
-
+        
         //add Geture Reconizer for resize Reading area
         readingArea.addGestureRecognizer(resizeReading)
         
@@ -57,9 +68,11 @@ public class readingWindow : NSObject {
         let readingW = readingArea.frame.width
         let readingH = readingArea.frame.height
         
-        //call to craw reading area firat time
-        drawArea.drawReadingArea(readingX: readingX, readingY: readingY, readingW: readingW, readingH: readingH, view: view, backColor: self.backColor, backAlpha: self.backgroundAlpha, readColor: self.readingAreaColor)
         
+        //call to craw reading area firat time
+        drawArea.drawReadingArea(readingX: readingX, readingY: readingY, readingW: readingW, readingH: readingH, view: readingView, backColor: self.setBackgroundColor, backAlpha: self.setBackgroundAlpha, readColor: self.setReadingAreaColor)
+        
+        self.isEnable = true
     }
     
     @objc func moveReadingArea(_ sender: UIPanGestureRecognizer) {
@@ -86,11 +99,12 @@ public class readingWindow : NSObject {
     }
 
     
-    public func removeWindow() { //for stop reading mode
+    public func hide() { //for stop reading mode
         
         //remove reading area & background view from parent view
         readingArea.removeFromSuperview()
         background.removeFromSuperlayer()
+        self.isEnable = false
     }
     
 }
