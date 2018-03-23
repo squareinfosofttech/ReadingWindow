@@ -8,7 +8,6 @@
 
 import UIKit
 import WebKit
-
 import readingWindow //import reading window package
 
 class ViewController: UIViewController { //demo for user reading window
@@ -53,12 +52,6 @@ class ViewController: UIViewController { //demo for user reading window
         } else {
             readingWindow.sharedInstance.show(view: self.webview)
         }
-    }
-    
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 }
