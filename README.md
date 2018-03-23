@@ -60,7 +60,7 @@ readingWindow.sharedInstance.setDefaultSize = CGRect(x: 99, y: 50, width: 180, h
 ```
 
 ## Demo Screen Shot
-![alt text](https://raw.githubusercontent.com/amit44405/ReadingWindow/Example/readingWindow/ScreenShot.png)
+![alt text](ReadingWindow/Example/readingWindow/ScreenShot.png)
 
 
 ## Requirements
