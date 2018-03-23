@@ -1,0 +1,6 @@
+framework module readingWindow {
+  umbrella header "readingWindow-umbrella.h"
+
+  export *
+  module * { export * }
+}
