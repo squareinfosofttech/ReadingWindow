@@ -67,11 +67,14 @@ class ViewController: UIViewController { //demo for user reading window
             
         }
         
-        //MARK: customized reading window
+        //MARK: customised reading window
         reading.backColor = UIColor.orange //set background color default color is black
         reading.backgroundAlpha = 0.8 //set background color alpha deafult color alpha is 0.9
         reading.readingAreaColor = UIColor.blue //set  reading area color default color is white
         reading.readingAreaAlpha = 0.1 //set reading area color alpha deafult color alpha is 0
+        
+        //set deafult reading area position and size
+        reading.defaultFrame = CGRect(x: 99, y: 50, width: 180, height: 30)
     }
 
     @objc func onClickReadingMode(_sender:UIButton) {
