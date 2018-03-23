@@ -9,28 +9,31 @@ import Foundation
 import UIKit
 
 class DrawReadingWindow {
-    
-    let UI = UIComponents()
-    let ReadingWindow = readingWindow()
-    
-     func drawReadingArea(readingX:CGFloat,readingY:CGFloat,readingW:CGFloat,readingH:CGFloat,view:UIView) {
+    /*
+    call while load reading window and draw default position reading area in parent view.
+    it is draw reading area as per reading view
+    */
+    func drawReadingArea(readingX:CGFloat,readingY:CGFloat,readingW:CGFloat,readingH:CGFloat,view:UIView,backColor:UIColor,backAlpha:CGFloat,readColor:UIColor) {
         //MARK: Draw Default Back Color Compact as per Reading View Frame
-        UI.background.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
-        UI.background.backgroundColor = ReadingWindow.backColor.withAlphaComponent(ReadingWindow.backAlpha).cgColor
+        background.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+        background.backgroundColor = backColor.withAlphaComponent(backAlpha).cgColor
         
-        UI.readingAreaShape.frame = UI.background.bounds
-        UI.readingAreaShape.fillColor = ReadingWindow.readingAreaColor.cgColor
+        readingAreaShape.frame = background.bounds
+        readingAreaShape.fillColor = readColor.cgColor
         
-        UI.readingFrame = CGRect(x: readingX, y: readingY, width: readingW, height: readingH)
-        UI.readingPath = UIBezierPath(rect: UI.readingAreaShape.frame)
+        //set reading area frame as per reading view
+        readingFrame = CGRect(x: readingX, y: readingY, width: readingW, height: readingH)
+        readingPath = UIBezierPath(rect: readingAreaShape.frame)
         
-        UI.readingAreaShape.fillRule = kCAFillRuleEvenOdd
+        readingAreaShape.fillRule = kCAFillRuleEvenOdd
         
-        UI.readingPath.append(UIBezierPath(rect: UI.readingFrame))
-        UI.readingAreaShape.path = UI.readingPath.cgPath
+        readingPath.append(UIBezierPath(rect: readingFrame))
+        readingAreaShape.path = readingPath.cgPath
         
-        UI.background.mask = UI.readingAreaShape
+        //update background mask
+        background.mask = readingAreaShape
         
-        view.layer.addSublayer(UI.background)
+        //add reading area in parent view
+        view.layer.addSublayer(background)
     }
 }

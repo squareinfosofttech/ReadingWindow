@@ -5,55 +5,93 @@
 //  Created by Amit Surani on 23/03/18.
 //
 
-import Foundation
-import UIKit
-
 //public class readingWindow it access view import readingWindow package
-class readingWindow {
+public class readingWindow : NSObject {
+
+    public var backgroundAlpha:CGFloat = 0.9 //background color alpha
+    public var readingAreaAlpha:CGFloat = 0 //reading area color alpha
+    public var backColor = UIColor.black //background color
+    public var readingAreaColor = UIColor.white //reading area color
     
-    //UI componants
-    private let UI = UIComponents()
+
+    private let drawArea = DrawReadingWindow() //access draw first time reading area
+    private let manageArea = AdjustReadingWindow()//redraw reading area
     
-    //variables
-    var backAlpha:CGFloat = 0.9
-    var readingAreaAlpha:CGFloat = 0
-    var backColor = UIColor.black
-    var readingAreaColor = UIColor.white
-    
-    private let GestureRecognizer = Gesture()
-   
-    private let drawReadingWindow = DrawReadingWindow()
-    
-    public func addWindow(view:UIView){
+    public func addWindow(view:UIView){ // for start reading mode
         
-        UI.readingView = view
+        readingView = view // init gesture views
         //MARK: init Gesture Pinch & Pan
-        UI.moveReadingArea.addTarget(self, action: #selector(GestureRecognizer.moveReading(_:)))
-        UI.resizeReadingArea.addTarget(self, action: #selector(GestureRecognizer.resizeReadingArea(_:)))
-        UI.readingArea.frame = CGRect(x: 11, y: 31, width: 211, height: 37)
-        UI.readingArea.backgroundColor = self.readingAreaColor.withAlphaComponent(self.readingAreaAlpha)
+        
+        //add target to reading area for move area position
+        moveReading.addTarget(self, action: #selector(self.moveReadingArea(_:)))
+
+        //add target to resize reading area
+        resizeReading.addTarget(self, action: #selector(self.resizeReadingArea(_:)))
+        
+        //set reading area deafult frame
+        readingArea.frame = CGRect(x: 11, y: 31, width: 211, height: 37)
+        
+        //set reading area default background color
+        readingArea.backgroundColor = self.readingAreaColor.withAlphaComponent(self.readingAreaAlpha)
         
         //MARK: Add Reading Subview in Webview also add Gesture to Subview
-        view.addSubview(UI.readingArea)
-        UI.readingArea.isUserInteractionEnabled = true
-        UI.readingArea.addGestureRecognizer(UI.moveReadingArea)
-        UI.readingArea.addGestureRecognizer(UI.resizeReadingArea)
-        UI.moveReadingArea.delegate = self as? UIGestureRecognizerDelegate
-        UI.resizeReadingArea.delegate = self as? UIGestureRecognizerDelegate
+        view.addSubview(readingArea)
         
-        let readingX = UI.readingArea.frame.origin.x
-        let readingY = UI.readingArea.frame.origin.y
-        let readingW = UI.readingArea.frame.width
-        let readingH = UI.readingArea.frame.height
+        //user intrection enable in reading area for move & resize reading area
+        readingArea.isUserInteractionEnabled = true
         
-        drawReadingWindow.drawReadingArea(readingX: readingX, readingY: readingY, readingW: readingW, readingH: readingH, view: view)
+        //add Gesture Reconizer for move reading area
+        readingArea.addGestureRecognizer(moveReading)
+
+        //add Geture Reconizer for resize Reading area
+        readingArea.addGestureRecognizer(resizeReading)
+        
+        //add delegate for gesture reconizer
+        moveReading.delegate = self as? UIGestureRecognizerDelegate
+        resizeReading.delegate = self as? UIGestureRecognizerDelegate
+        
+        //init default reading area positon
+        let readingX = readingArea.frame.origin.x
+        let readingY = readingArea.frame.origin.y
+        let readingW = readingArea.frame.width
+        let readingH = readingArea.frame.height
+        
+        //call to craw reading area firat time
+        drawArea.drawReadingArea(readingX: readingX, readingY: readingY, readingW: readingW, readingH: readingH, view: view, backColor: self.backColor, backAlpha: self.backgroundAlpha, readColor: self.readingAreaColor)
+        
     }
     
-   
-    public func removeWindow() {
-        UI.readingArea.removeFromSuperview()
-        UI.background.removeFromSuperlayer()
+    @objc func moveReadingArea(_ sender: UIPanGestureRecognizer) {
+        //MARK: Config. Pan Gesture for Reading View
+        let translation = sender.translation(in: readingView)
+        //resize reading view
+        sender.view!.center = CGPoint(x: sender.view!.center.x + translation.x, y: sender.view!.center.y + translation.y)
+        sender.setTranslation(CGPoint.zero, in: readingView)
+
+        //MARK: Call function for Resize All  Compact as per Readingview Frame update all frame as per reading view
+        manageArea.adjustReadingArea()
+
+    }
+
+    @objc func resizeReadingArea(_ sender: UIPinchGestureRecognizer) {
+        //MARK: Config. Pinch Gesture for Reading View
+        
+        //move reading area
+        sender.view?.transform = (sender.view?.transform)!.scaledBy(x: sender.scale, y: sender.scale)
+        sender.scale = 1.0
+
+        //MARK: Call function for Resize All Black Compact as per Readingview Frame
+        manageArea.adjustReadingArea()
+    }
+
+    
+    public func removeWindow() { //for stop reading mode
+        
+        //remove reading area & background view from parent view
+        readingArea.removeFromSuperview()
+        background.removeFromSuperlayer()
     }
     
 }
+
 

@@ -9,27 +9,31 @@ import Foundation
 import UIKit
 
 class AdjustReadingWindow {
-    
-    let UI = UIComponents()
-    
+
+    /*
+        it is work when move or resize reading area. set new area position and update reading area frame as per user intrection selected area.
+     it is call while user Gesture recognizer. Pan & Pinch
+     */
     
      func adjustReadingArea() {
         //MARK: init Const. Value of Reading Viw and Webview Frame Size
-        let readingX = UI.readingArea.frame.origin.x
-        let readingY = UI.readingArea.frame.origin.y
-        let readingW = UI.readingArea.frame.width
-        let readingH = UI.readingArea.frame.height
+        let readingX = readingArea.frame.origin.x
+        let readingY = readingArea.frame.origin.y
+        let readingW = readingArea.frame.width
+        let readingH = readingArea.frame.height
         
         //MARK: Update all Black Compact as per Reading Area Frame
-        UI.readingFrame = CGRect(x: readingX, y: readingY, width: readingW, height: readingH)
-        UI.readingPath = UIBezierPath(rect: UI.readingAreaShape.frame)
+        readingFrame = CGRect(x: readingX, y: readingY, width: readingW, height: readingH)
         
-        UI.readingAreaShape.fillRule = kCAFillRuleEvenOdd
+        //update new reading area position as per reading view and set new reading area path
+        readingPath = UIBezierPath(rect: readingAreaShape.frame)
         
-        UI.readingPath.append(UIBezierPath(rect: UI.readingFrame))
-        UI.readingAreaShape.path = UI.readingPath.cgPath
+        readingAreaShape.fillRule = kCAFillRuleEvenOdd
         
-        UI.background.mask = UI.readingAreaShape
+        readingPath.append(UIBezierPath(rect: readingFrame))
+        readingAreaShape.path = readingPath.cgPath
+        
+        background.mask = readingAreaShape
         
     }
 }
