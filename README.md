@@ -1,4 +1,4 @@
-# readingWindow
+# Reading Window
 
 [![CI Status](http://img.shields.io/travis/amit44405/readingWindow.svg?style=flat)](https://travis-ci.org/amit44405/readingWindow)
 [![Version](https://img.shields.io/cocoapods/v/readingWindow.svg?style=flat)](http://cocoapods.org/pods/readingWindow)
@@ -27,7 +27,7 @@ if you want to remove it then call :
 readingWindow.sharedInstance.hide()
 ```
 
-## customised reading window :
+## Customised Reading Window :
 
 set background color default color is black
 
@@ -53,7 +53,7 @@ set reading area color alpha deafult color alpha is 0
 readingWindow.sharedInstance.setReadingAreaAlpha = 0.1
 ```
 
-set deafult reading window position and size 
+set deafult reading window position and size
 
 ```
 readingWindow.sharedInstance.setDefaultSize = CGRect(x: 99, y: 50, width: 180, height: 30)
