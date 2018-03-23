@@ -22,7 +22,7 @@ pod 'readingWindow'
 
 ## Author
 
-amit44405, surania215@gmail.com
+Squareinfosoft, tech@squareinfosoft.com
 
 ## License
 
