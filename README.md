@@ -55,12 +55,22 @@ readingWindow.sharedInstance.setReadingAreaAlpha = 0.1
 
 set deafult reading window position and size
 
-```
+```ruby
 readingWindow.sharedInstance.setDefaultSize = CGRect(x: 99, y: 50, width: 180, height: 30)
 ```
 
+
+for check Reading window mode is enable or not :
+
+```ruby
+readingWindow.sharedInstance.isEnable
+```
+
+readingWindow.sharedInstance.isEnable
+
+
 ## Demo Screen Shot
-![alt text](ReadingWindow/Example/readingWindow/ScreenShot.png)
+![alt text](https://preview.ibb.co/dphj27/Simulator_Screen_Shot_i_Phone_8_2018_03_24_at_10_28_46.png)
 
 
 ## Requirements

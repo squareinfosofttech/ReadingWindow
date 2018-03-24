@@ -4,7 +4,7 @@ PODS:
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
-  - readingWindow (0.1.0)
+  - readingWindow (1.0.0)
 
 DEPENDENCIES:
   - FBSnapshotTestCase (~> 2.1.4)
@@ -16,7 +16,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  readingWindow: b3ba140f9b867926c8e919891b81091ac155a35f
+  readingWindow: 6ce445eebafa56af2177103abda55291816a43df
 
 PODFILE CHECKSUM: b9cbb839fe9d8fc03307d78a48b29312840be003
 
