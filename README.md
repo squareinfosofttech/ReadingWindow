@@ -31,22 +31,22 @@ pod 'readingWindow'
 # platform :ios, '9.0'
 
 target 'PROJECT_NAME' do
-# Comment the next line if you're not using Swift and don't want to use dynamic frameworks
-use_frameworks!
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
 
-pod 'readingWindow'
+    pod 'readingWindow'
 
-# Pods for PROJECT_NAME
+  # Pods for PROJECT_NAME
 
-target 'PROJECT_NAMETests' do
-inherit! :search_paths
-# Pods for testing
-end
+  target 'PROJECT_NAMETests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
 
-target 'PROJECT_NAMEUITests' do
-inherit! :search_paths
-# Pods for testing
-end
+  target 'PROJECT_NAMEUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
 
 end
 ```
