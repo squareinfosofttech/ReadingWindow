@@ -14,7 +14,6 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		69DC426920652DB7002CDAA5 /* swiftDemo.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 69DC426820652DB7002CDAA5 /* swiftDemo.pdf */; };
 		69DC426D20653265002CDAA5 /* ScreenShot.png in Resources */ = {isa = PBXBuildFile; fileRef = 69DC426C20653265002CDAA5 /* ScreenShot.png */; };
 		E0DF2013CB9435E173C3D7CC /* Pods_readingWindow_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB422A788FC5C6749517C74 /* Pods_readingWindow_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -42,7 +41,6 @@
 		607FACE51AFB9204008FA782 /* readingWindow_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = readingWindow_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		69DC426820652DB7002CDAA5 /* swiftDemo.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = swiftDemo.pdf; sourceTree = "<group>"; };
 		69DC426C20653265002CDAA5 /* ScreenShot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenShot.png; sourceTree = "<group>"; };
 		77CBE9D319BA2A81DAE51C26 /* Pods-readingWindow_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-readingWindow_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-readingWindow_Example/Pods-readingWindow_Example.release.xcconfig"; sourceTree = "<group>"; };
 		854A7D90E507FA22A58D8A35 /* readingWindow.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = readingWindow.podspec; path = ../readingWindow.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -122,7 +120,6 @@
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
-				69DC426820652DB7002CDAA5 /* swiftDemo.pdf */,
 				69DC426C20653265002CDAA5 /* ScreenShot.png */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
@@ -216,7 +213,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
@@ -259,7 +256,6 @@
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				69DC426D20653265002CDAA5 /* ScreenShot.png in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
-				69DC426920652DB7002CDAA5 /* swiftDemo.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,12 +433,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -490,12 +488,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -576,6 +576,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/readingWindow_Example.app/readingWindow_Example";
 			};
 			name = Debug;
 		};
@@ -593,6 +594,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/readingWindow_Example.app/readingWindow_Example";
 			};
 			name = Release;
 		};

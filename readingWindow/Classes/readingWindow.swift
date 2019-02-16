@@ -36,7 +36,7 @@ public class readingWindow:NSObject {
     public var setBackgroundColor = UIColor.black //background color
     public var setReadingAreaColor = UIColor.white //reading area color
     
-    public var setDefaultSize = CGRect(x: 11, y: 31, width: 211, height: 37) //defaulr frame of reading area
+    public var setDefaultSize = CGRect.zero //default frame of reading area
 
     private let drawArea = DrawReadingWindow() //access draw first time reading area
     private let manageArea = AdjustReadingWindow() //redraw reading area
@@ -55,7 +55,7 @@ public class readingWindow:NSObject {
     private func config() {
        
         //set reading area deafult frame
-        readingArea.frame = self.setDefaultSize
+        readingArea.frame = self.setDefaultSize == .zero ? CGRect(x: 10, y: ((readingView.layer.frame.height / 2) - 35), width: (readingView.layer.frame.width - 20), height: 70) : self.setDefaultSize
         
         //set reading area default background color
         readingArea.backgroundColor = self.setReadingAreaColor.withAlphaComponent(self.setReadingAreaAlpha)
