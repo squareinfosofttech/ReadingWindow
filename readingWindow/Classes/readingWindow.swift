@@ -31,7 +31,7 @@ public class readingWindow:NSObject {
 
     private override init() { }
     
-    public var setBackgroundAlpha:CGFloat = 0.9 //background color alpha
+    public var setBackgroundAlpha:CGFloat = 0.95 //background color alpha
     public var setReadingAreaAlpha:CGFloat = 0 //reading area color alpha
     public var setBackgroundColor = UIColor.black //background color
     public var setReadingAreaColor = UIColor.white //reading area color
